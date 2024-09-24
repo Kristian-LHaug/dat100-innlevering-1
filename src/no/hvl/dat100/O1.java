@@ -21,6 +21,10 @@ public class O1 {
 				        } else {
 				            return "A";
 				        }
+				       
+				        	
+				      
+				        	
 				    }
 		    	
 		    		 
@@ -31,20 +35,32 @@ public class O1 {
 
 		    	        int[] poengsumArray = new int[10];
 		    	        String[] karakterArray = new String[10];
-
+		    	       
+		    	        
+		    	        
 		    	        for (int i = 0; i < 10; i++) {
-		    	            System.out.print("Skriv inn poengsum for elev " + (i + 1) + ": ");
-		    	            poengsumArray[i] = scanner.nextInt();
-		    	            karakterArray[i] = beregnKarakter(poengsumArray[i]);
+		    	            int poengsum;
+		    	            while (true) {
+		    	                System.out.print("Skriv inn poengsum for elev " + (i + 1) + " : ");
+		    	                poengsum = scanner.nextInt();
+		    	                if (poengsum >= 0 && poengsum <= 100) {
+		    	                    break;  
+		    	                } else {
+		    	                    System.out.println("Ugyldig poengsum. Vennligst oppgi en poengsum mellom 0 og 100.");
+		    	                }
+		    	            }
+		    	            poengsumArray[i] = poengsum;
+		    	            karakterArray[i] = beregnKarakter(poengsum);
 		    	        }
-
+	
 		    	        System.out.println("\nKarakterene for hver poengsum er:");
 		    	        for (int i = 0; i < 10; i++) {
 		    	            System.out.println("Elev " + (i + 1) + " - Poengsum: " + poengsumArray[i] + ", Karakter: " + karakterArray[i]);
 		    	        }
-
+		    	        
 		    	        scanner.close();				    		 
 				    	 }
+}
 				    		
-		    }
+		    
 		   
